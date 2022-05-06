@@ -1,0 +1,45 @@
+<p>listado works!</p>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-6" >
+          <p>Es hora de programar</p>
+
+      </div>
+
+      <div class="col-md-6 " >
+        <p class="text-info" *ngIf="heroeborrado; else noborrado  "> Heroe borrado </p>
+
+        <h3>{{ heroeborrado }}</h3>
+        <ng-template #noborrado>
+        
+          <p class="text-info" *ngIf="!heroeborrado"> No ha borrado nada </p>
+        </ng-template>
+        
+        <!-- tambien se puede ejecutar de esta manera para que no aparezca el nombre listado de heroes hasta que 
+        se oprima el boton borrar
+        <p class="text-info" *ngIf=" heroeborrado"> Listado de heroes </p>
+         -->
+        
+     
+         
+        <button (click)="borrarHeroe()">Borrar</button>
+        
+           
+      
+
+        <ul>
+            <li *ngFor="let heroe of heroes; let i= index "> {{i + 1}} - {{heroe}} </li>
+           
+        </ul>
+  
+
+         <ul>
+           <li *ngFor="let animal of animales; let i= index " >{{i +1 }} - {{animales}}</li>
+         </ul>
+    </div>
+
+
+  </div>
+
+</div>
